@@ -1,0 +1,41 @@
+{% extends 'testapp/base.html' %}
+{% block title_block %}
+{{title}}
+{% endblock %}
+
+{% block body_block %}
+<div class="jumbotron">
+    <h1>Welcome To Our Generic Report Generation Module</h1>
+    <hr>
+    {% if messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {% for msg in messages %}
+        <span>{{msg}}</span>
+        <span aria-hidden="true">&times;</span>
+        {% endfor %}
+       
+      </div>
+    {% endif %}
+    
+    <form action="" method="POST" id="myForm">
+        {% csrf_token %}
+        {{form}}
+        <!-- Extra Detail Form -->
+        <div id="forms" class="extra_details_form">
+            <section class="form">
+                {{extra_form}}
+            </section>
+        </div>
+        <br>
+        
+    </form>
+    <!-- <button id="remove" class="btn btn-primary">remove</button> -->
+    <button id='add' class="btn btn-primary">Add</button>
+    <a href="{% url 'home' %}" class="btn btn-primary">back</a>
+    <button type="submit" class="btn btn-danger" form="myForm">Get Report</button>
+    <a href="{% url 'logout_view' %}" class="btn btn-info">Logout</a>
+    <br>
+    
+</div>
+
+{% endblock %}

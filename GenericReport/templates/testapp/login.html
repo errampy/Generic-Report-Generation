@@ -1,0 +1,16 @@
+{% extends 'testapp/base.html' %}
+{% block title_block %}
+{{title}}
+{% endblock %}
+
+{% block body_block %}
+<div class="jumbotron">
+    <h1>Welcome To Our Dynamic Report Generation Module</h1><hr>
+    <form action="" method="POST">
+        {% csrf_token %}
+            {{form}}
+            <br><input type="submit" name="login" value="Get Login" class="btn btn-primary">
+    </form>
+</div>
+
+{% endblock %}

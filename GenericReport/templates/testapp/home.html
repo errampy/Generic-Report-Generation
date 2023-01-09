@@ -1,0 +1,15 @@
+{% extends 'testapp/base.html' %}
+{% block title_block %}
+{{title}}
+{% endblock %}
+
+{% block body_block %}
+<div class="jumbotron">
+    <h1>Welcome To Our Dynamic Report Generation Module</h1><hr>
+    <a href="{% url 'login_view' %}" class="btn btn-info">Login</a>
+    <a href="{% url 'report_master' %}" class="btn btn-info">Report Master</a>
+    <a href="{% url 'render_pdf' %}" class="btn btn-info">Generate Report</a>
+    <a href="{% url 'logout_view' %}" class="btn btn-info">Logout</a>
+</div>
+
+{% endblock %}
